@@ -3,7 +3,7 @@ import template_style from './style.css';
 import {pkj,the_projects_array } from './pkj.js'
 import {add_event} from './pkj.js'
 import { doam_creater} from './dom.js'
-import {submit,cancel_todo,todo_displayer,to_do_list} from './todolist.js'
+import {submit,cancel_todo,todo_displayer,to_do_list,to_do_list_object} from './todolist.js'
 
 const btn_new_project =document.querySelector(".new_project_btn")
 const btn_cancel = document.querySelector(".cancel")
