@@ -27,6 +27,14 @@ export function project_displyer(proname){
     boxdisplyer.appendChild(deleteIcon)
     
       }
+
+    //   funciton thar render on the page 
+   export function todorender(found_project){
+
+     console.log("i found this ")
+     console.log(found_project)
+     console.log(found_project.pro_task_iteams)
+    }
    
 
      
