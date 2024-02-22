@@ -138,3 +138,59 @@
       height: 2rem;
       font-size: 1rem;
 }
+.dialog{
+    width: 40rem;
+    height: 45rem;
+    margin: 0 auto;
+    margin-top: 6rem;
+    border: none;
+    text-align: center;
+    padding-top: 3rem;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+ gap: 2rem;
+  align-items: center;
+  
+}
+.form div label{
+    font-size: 2rem;
+    text-align: center;
+  
+    /* background-color: aqua; */
+}
+.input_box{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+   gap: 2rem;
+}
+.form div input{
+    font-size: 1.5rem;
+    text-align: center;
+    width: 25rem;   
+}
+#myDropdown{
+width: 20rem;
+height: 4rem;
+text-align: center;
+font-size: 1.5rem;
+}
+textarea{
+ width: 25rem;
+ font-size: 1.3rem;
+}
+.submit{
+  width: 9rem;
+  height: 3rem;
+  font-size: 1.4rem;
+}
+.cancel{
+    width: 9rem;
+    height: 3rem;
+    font-size: 1.4rem;
+}
+/* .form div input[type="date"]{
+    width: 30rem;
+} */

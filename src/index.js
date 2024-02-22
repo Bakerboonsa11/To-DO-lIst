@@ -45,9 +45,7 @@ document.querySelector(".addbtn").addEventListener("click",function(){
 //   console.log(project)
 })
 function colector_reruner(){
-      document.querySelector(".add_task").addEventListener("click",function(){
-            todo_displayer()
-      })
+     
       const clickeddiv = document.querySelectorAll(".name_of_project");
       
       
@@ -73,5 +71,11 @@ function  projectmacher(event){
       
     
 }
+ document.querySelector(".add_task").addEventListener("click",function(){
+            todo_displayer()
+      })
+document.querySelector(".submit").addEventListener("click" ,function(){
+  alert("i clicked")
+})
 
 
