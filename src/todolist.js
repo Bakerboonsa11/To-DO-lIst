@@ -1,6 +1,6 @@
 export class to_do_list {
     constructor(title,description,a_date,Priority){
-       this.tile = title
+       this.title = title
        this.description = description
        this.date = a_date
        this.Priority= Priority

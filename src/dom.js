@@ -1,5 +1,5 @@
 export function project_displyer(proname){
-
+    
     const box = document.querySelector(".box2")
      const boxdisplyer = document.createElement("div")
      boxdisplyer.classList.add("project_displyer")
@@ -33,7 +33,81 @@ export function project_displyer(proname){
 
      console.log("i found this ")
      console.log(found_project)
-     console.log(found_project.pro_task_iteams)
+   
+   
+    //  console.log(project_name)
+    //  console.log(project_array)
+
+     let project_name= found_project.pname;
+     let project_array = found_project.pro_task_iteams;
+    
+     document.querySelector(".top_proname").textContent=found_project.pname
+     const allcont =  document.querySelector(".this_contentchange")
+     console.log(allcont)
+     
+      while (allcont.firstChild) {
+          allcont.removeChild(allcont.firstChild);
+        }
+
+    project_array.forEach(function (element) {
+     
+
+        const todolistcontainer = document.createElement("div")
+        todolistcontainer.classList.add("TO-DO-LIST_displyer")
+    
+        const radibtncontent= document.createElement("div")
+        radibtncontent.classList.add("radiobtncont")
+        todolistcontainer.appendChild(radibtncontent)
+    
+        const radio = document.createElement("input")
+        radio.setAttribute('type', 'radio');
+        radibtncontent.appendChild(radio)
+    
+        const title = document.createElement("p")
+        title.textContent=element.title
+        console.log("textt is")
+        console.log(title.textContent)
+        radibtncontent.appendChild(title)
+    
+    
+    
+        // Create the date container div
+    const  dateContainer = document.createElement('div');
+    dateContainer.classList.add('datecont');
+    
+    // Create the date paragraph
+    const dateParagraph = document.createElement('p');
+    dateParagraph.classList.add('date');
+    dateParagraph.textContent = element.date;
+    
+    // Create the priority paragraph
+    const priorityParagraph = document.createElement('p');
+    priorityParagraph.classList.add('prio');
+    priorityParagraph.textContent = element.Priority;
+    
+    // Create the edit icon
+    const editIcon = document.createElement('ion-icon');
+    editIcon.setAttribute('name', 'create-outline');
+    editIcon.classList.add('iconedit');
+    
+    // Create the delete icon
+    const deleteIcon = document.createElement('ion-icon');
+    deleteIcon.setAttribute('name', 'trash-outline');
+    deleteIcon.classList.add('icondelete');
+    
+    // Append the child elements to the date container
+    dateContainer.appendChild(dateParagraph);
+    dateContainer.appendChild(priorityParagraph);
+    dateContainer.appendChild(editIcon);
+    dateContainer.appendChild(deleteIcon);
+    todolistcontainer.appendChild(dateContainer)
+
+    allcont.appendChild(todolistcontainer)
+      });
+
+ 
+     
+
     }
    
 

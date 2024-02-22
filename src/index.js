@@ -11,13 +11,19 @@ const prject_colector=[]
  prject_colector.push(project1)
  prject_colector.push(project2)
   const todo1 = {
-       tile :"title",
+       title:"title",
        description :"description",
-       date :"a_date",
+       date:"a_date",
        Priority: "Priority"
   }
+  const todo3 = {
+      title:"title3",
+      description :"description3",
+      date:"a_date3",
+      Priority: "Priority3"
+ }
  const todo2 = {
-      tile :"title2",
+      title :"title2",
       description :"description2",
       date :"a_date2",
       Priority: "Priority2"
@@ -25,6 +31,7 @@ const prject_colector=[]
 
  project1.pro_task_iteams.push(todo1)
  project2.pro_task_iteams.push(todo2)
+ project1.pro_task_iteams.push(todo3)
  
  project_displyer(project1.pname)
  project_displyer(project2.pname)
@@ -60,6 +67,7 @@ function  projectmacher(event){
       return project.pname === element.textContent;
     });
     console.log(found_project)
+//      where the dom part is colled to hindle the rander part
   todorender(found_project)
 
       
