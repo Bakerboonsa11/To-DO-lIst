@@ -1,3 +1,6 @@
+import{submit_creater} from './dom.js';
+
+
 export class to_do_list {
     constructor(title,description,a_date,Priority){
        this.title = title
@@ -10,9 +13,15 @@ export class to_do_list {
      }
    
    }
+   export let current_project;
    export function to_do_list_object(tvalue,datevalue, disvalue,selvalue){
        const todo = new to_do_list(tvalue,datevalue,disvalue,selvalue)
+       current_project.pro_task_iteams.push(todo)
+       console.log("the curent project is at this level")
+       console.log(current_project)
+       console.log("the created to do is ")
        console.log(todo)
+       submit_creater(todo)
    }
    export function todo_displayer(){
    const dialog = document.querySelector(".dialog");

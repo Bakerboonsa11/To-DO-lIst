@@ -109,6 +109,64 @@ export function project_displyer(proname){
      
 
     }
+
+ export function submit_creater(to_do){
+ 
+  console.log(to_do.title)
+  const allcont =  document.querySelector(".this_contentchange")
+  const todolistcontainer = document.createElement("div")
+  todolistcontainer.classList.add("TO-DO-LIST_displyer")
+
+  const radibtncontent= document.createElement("div")
+  radibtncontent.classList.add("radiobtncont")
+  todolistcontainer.appendChild(radibtncontent)
+
+  const radio = document.createElement("input")
+  radio.setAttribute('type', 'radio');
+  radibtncontent.appendChild(radio)
+
+  const title = document.createElement("p")
+  title.textContent=to_do.title
+  console.log("textt is")
+  console.log(title.textContent)
+  radibtncontent.appendChild(title)
+
+
+
+  // Create the date container div
+const  dateContainer = document.createElement('div');
+dateContainer.classList.add('datecont');
+
+// Create the date paragraph
+const dateParagraph = document.createElement('p');
+dateParagraph.classList.add('date');
+dateParagraph.textContent = to_do.date;
+
+// Create the priority paragraph
+const priorityParagraph = document.createElement('p');
+priorityParagraph.classList.add('prio');
+priorityParagraph.textContent = to_do.Priority;
+
+// Create the edit icon
+const editIcon = document.createElement('ion-icon');
+editIcon.setAttribute('name', 'create-outline');
+editIcon.classList.add('iconedit');
+
+// Create the delete icon
+const deleteIcon = document.createElement('ion-icon');
+deleteIcon.setAttribute('name', 'trash-outline');
+deleteIcon.classList.add('icondelete');
+
+// Append the child elements to the date container
+dateContainer.appendChild(dateParagraph);
+dateContainer.appendChild(priorityParagraph);
+dateContainer.appendChild(editIcon);
+dateContainer.appendChild(deleteIcon);
+todolistcontainer.appendChild(dateContainer)
+
+allcont.appendChild(todolistcontainer)
+
+ }
    
 
      
