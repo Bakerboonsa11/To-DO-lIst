@@ -19,8 +19,19 @@ function retrieveDataFromLocalStorage() {
 window.addEventListener('load', function() {
 alert("retfgyhuj")
  retrieveDataFromLocalStorage();
-  console.log( JSON.parse(localStorage.getItem("prject_colector")))
-  
+ const retrived_data =JSON.parse(localStorage.getItem("prject_colector"))
+ console.log(retrived_data)
+  for(let obj=0;obj<retrived_data.length;obj++){
+     console.log(retrived_data[obj])
+     if(retrived_data[obj].pname==="project1" ||retrived_data[obj].pname==="project2"){
+      console.log("the are the default")
+     }
+     else{
+      addbtnf2(retrived_data[obj])
+     }
+     
+    //  addbtnf()
+  }
 });
 
 
@@ -155,6 +166,25 @@ function retrieveFromLocalStorage(key) {
 }
 
 
+
+
+function addbtnf2(project){
+  
+  // const retrived_pro_name_array=retrieveFromLocalStorage("pro_name_array") 
+
+   
+   let  pname=project.pname
+  
+   let  proname =new pkj(pname)
+  
+  
+  
+
+
+ 
+  project_displyer(proname.pname)
+  colector_reruner()
+}
 // window.onload = function() {
 //   // Retrieve data
 //   var retrievedData = localStorage.getItem('prject_colector');
