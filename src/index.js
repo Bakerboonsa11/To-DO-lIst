@@ -16,34 +16,15 @@ function retrieveDataFromLocalStorage() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 window.addEventListener('load', function() {
 alert("retfgyhuj")
  retrieveDataFromLocalStorage();
-  // const retrieved_procolector =   retrieveFromLocalStorage("prject_colector");
-
-  // console.log(retrieved_procolector);
-
   console.log( JSON.parse(localStorage.getItem("prject_colector")))
   
 });
 
 
 export const prject_colector=[]
-
-// saveToLocalStorage("prject_colector",prject_colector);
-
-
-
 
 let last_holder;
 
