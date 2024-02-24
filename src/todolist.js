@@ -1,4 +1,5 @@
 import{submit_creater} from './dom.js';
+import { saveToLocalStorage,prject_colector} from './index.js'
 
 
 export class to_do_list {
@@ -13,26 +14,28 @@ export class to_do_list {
      }
    
    }
-   export let current_project;
-   export function to_do_list_object(tvalue,datevalue, disvalue,selvalue){
+export let current_project;
+export function to_do_list_object(tvalue,datevalue, disvalue,selvalue){
        const todo = new to_do_list(tvalue,datevalue,disvalue,selvalue)
        current_project.pro_task_iteams.push(todo)
        console.log("the curent project is at this level")
        console.log(current_project)
        console.log("the created to do is ")
        console.log(todo)
+      //  saveToLocalStorage("prject_colector",prject_colector);
        submit_creater(todo)
+      
    }
-   export function todo_displayer(){
+export function todo_displayer(){
    const dialog = document.querySelector(".dialog");
    dialog.showModal()
    }
-   export function cancel_todo(){
+export function cancel_todo(){
       
        const dialog = document.querySelector(".dialog");
        dialog.close()
    }
-   export function submit(event){
+export function submit(event){
        event.preventDefault()
        const dialog = document.querySelector(".dialog");
      const  textInputsvalue =document.querySelector("input[type='text']").value;
