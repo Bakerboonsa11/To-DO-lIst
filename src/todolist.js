@@ -3,7 +3,7 @@ import { saveToLocalStorage,prject_colector} from './index.js'
 
 
 export class to_do_list {
-    constructor(title,description,a_date,Priority){
+    constructor(title,a_date,description,Priority){
        this.title = title
        this.description = description
        this.date = a_date
@@ -42,6 +42,12 @@ export function submit(event){
      const  dateInputsvalue =document.querySelector("input[type='date']").value;
      const descrinputvalue = document.querySelector("textarea").value
      const selinputvalue = document.querySelector("select").value
+     console.log("the place")
+     console.log(textInputsvalue)
+     console.log( dateInputsvalue)
+     console.log(descrinputvalue)
+     console.log(descrinputvalue)
+
      dialog.close()
      to_do_list_object(textInputsvalue,dateInputsvalue,descrinputvalue,selinputvalue)
    }

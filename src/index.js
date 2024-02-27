@@ -55,9 +55,9 @@ prject_colector.push(project2)
 //  console.log("the retrived array colector is know contain to project evry time")
 //  console.log(projectCollector_retrived)
 
-  const todo1 = new to_do_list("title","description","a_date","Priority")
-  const todo2 = new to_do_list("title2","description2","a_date2","Priority2")
-  const todo3 = new to_do_list("title3","description3","a_date3","Priority3")
+  const todo1 = new to_do_list("title","09/23/2021","description","low")
+  const todo2 = new to_do_list("title2","10/23/2022","description2","medium")
+  const todo3 = new to_do_list("title3","11/24/2022","description3","high")
 
 
  current_project= project1
@@ -145,6 +145,7 @@ document.querySelector(".submit").addEventListener("click" ,function(){
 document.querySelector(".cancel").addEventListener("click" ,function(){
   cancel_todo()
 })
+
  
 //   the funcition that is used to save the data in the local storage 
 export function saveToLocalStorage(key, data) {
@@ -185,15 +186,42 @@ function addbtnf2(project){
   project_displyer(proname.pname)
   colector_reruner()
 }
-// window.onload = function() {
-//   // Retrieve data
-//   var retrievedData = localStorage.getItem('prject_colector');
+export function delet_funcition(){
+ const todo_container = document.querySelector(".this_contentchange")
+ todo_container.style.opacity="100%"
+ const ratg =(event.target)
+ const parent = ratg.parentNode
+ console.log("the parent is ")
+ console.log(parent.textContent)
+ console.log(parent)
+ const children = parent.children;
+
   
-//   // Check if data exists
-//   if (retrievedData) {
-//     console.log(retrievedData);
-//     // Do something with the retrieved data
-//   } else {
-//     console.log('No data found.');
-//   }
-// };
+ const todeltedproject =retrieveFromLocalStorage("prject_colector")
+ const found_project = todeltedproject.find(function (project) {
+  return project.pname === children[1].textContent;
+  
+ 
+  
+  
+});
+todo_container.style.opacity="0"
+
+const the_index_to_be_removed=todeltedproject.indexOf(found_project);
+console.log(the_index_to_be_removed)
+todeltedproject.splice(the_index_to_be_removed, 1);
+console.log("after the index is removed it looks like this")
+console.log(todeltedproject)
+saveToLocalStorage("prject_colector",todeltedproject )
+
+// console.log(found_project)
+// console.log("the found object is the above one")
+
+//   console.log("dodododo")
+//   console.log(document.querySelector(".name_of_project").textContent)
+parent.parentNode.removeChild(parent);
+document.querySelector(".top_proname").textContent="";
+}
+export function tododeletefunc(){
+  alert("i clicked")
+}

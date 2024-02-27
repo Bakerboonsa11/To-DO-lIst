@@ -1,5 +1,6 @@
+import {delet_funcition,tododeletefunc} from "./index.js"
 export function project_displyer(proname){
-    
+  
     const box = document.querySelector(".box2")
      const boxdisplyer = document.createElement("div")
      boxdisplyer.classList.add("project_displyer")
@@ -20,14 +21,26 @@ export function project_displyer(proname){
     editIcon.setAttribute('name', 'create-outline');
     editIcon.classList.add('iconedit');
     boxdisplyer.appendChild(editIcon)
+   
 
     let deleteIcon = document.createElement('ion-icon');
     deleteIcon.setAttribute('name', 'trash-outline');
-    deleteIcon.classList.add('icondelete');
+    deleteIcon.classList.add('icondelete_pro');
     boxdisplyer.appendChild(deleteIcon)
+    if(proname==="project1"||proname==="project2"){
+      deleteIcon.classList.add('disabled');
+      // deleteIcon.style.backgroundColor = "blue";
+      deleteIcon.style.pointerEvents = "none";
+      
+    }
+    else{
+      deleteIcon.addEventListener("click" ,delet_funcition)
+    }
+  
+   
     
       }
-
+ 
     //   funciton thar render on the page 
    export function todorender(found_project){
 
@@ -43,6 +56,8 @@ export function project_displyer(proname){
     
      document.querySelector(".top_proname").textContent=found_project.pname
      const allcont =  document.querySelector(".this_contentchange")
+    //  const todo_container = document.querySelector(".this_contentchange")
+          allcont.style.opacity="100%"
      console.log(allcont)
      
       while (allcont.firstChild) {
@@ -157,6 +172,7 @@ const deleteIcon = document.createElement('ion-icon');
 deleteIcon.setAttribute('name', 'trash-outline');
 deleteIcon.classList.add('icondelete');
 
+
 // Append the child elements to the date container
 dateContainer.appendChild(dateParagraph);
 dateContainer.appendChild(priorityParagraph);
@@ -165,7 +181,7 @@ dateContainer.appendChild(deleteIcon);
 todolistcontainer.appendChild(dateContainer)
 
 allcont.appendChild(todolistcontainer)
-
+  deleteIcon.addEventListener("click",tododeletefunc)
  }
    
 

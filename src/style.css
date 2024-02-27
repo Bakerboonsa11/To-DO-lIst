@@ -4,6 +4,11 @@
     box-sizing: border-box;
     font-size: 62.5%;
 }
+/* mycolors
+#EEEDEB
+#E0CCBE
+#747264
+#3C3633 */
 .container{
  max-width: 100%;
  height: 100vh;
@@ -23,8 +28,25 @@
 
 }
 .box1{
-    background-color: aqua;
-    height: 7rem;
+    
+    background-color: #F4538A;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    gap: 5rem;
+}
+.logo{
+    font-size: 4rem;
+    color: #59D5E0;
+    font-weight: 900;
+}
+.BOX1_SPAN{
+    font-size: 3rem;
+    color: #fff;
+    letter-spacing: 7px;
+    font-weight: 900;
 }
 .box2{
    
@@ -33,20 +55,25 @@
     flex-direction: column;
     justify-content: start;
   /* padding: 5rem; */
-  gap: 4rem;
+  background-color: #F5DD61;
+    gap: 4rem;
+    box-shadow: inset 0px 8px 8px 2px rgba(0, 0, 0, 0.2);
 }
 .box3{
-    background-color: yellowgreen;
+    background-color: #FAA300;
     width: 75%;
-    height: 88vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-
+    box-shadow: 0px 8px 8px 8px rgba(0, 0, 0, 0.2);
 }
 
 .box2_header{
     font-size: 4rem;
     text-align: center;
+    color: #555;
+    opacity: 0.7;
+    letter-spacing: 2px;
 }
 .new_project_btn{
     width: 15rem;
@@ -68,9 +95,23 @@
     padding: 1rem;
 }
 .add_pro{
-    width: 13rem;
+    width: 15rem;
     font-size: 1.5rem;
-    height: 3rem;
+    height: 4rem;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #FFF;
+    background-color: #F4538A;
+    color: #fff;
+    font-weight: 900;
+    align-self: center;
+    box-shadow: 6px 6px 15px rgba(255, 255, 255, 0.3);
+}
+.add_pro:hover{
+  
+    border: 1px solid #d83b6f;
+    background-color: #FFF;
+    color: #d83b6f;
    
 }
 .add_pro span{
@@ -81,15 +122,37 @@
 .project_displyer{
  display: flex;
  align-items: center;
- background-color: rgb(151, 103, 103);
+ background-color: #59D5E0;
  gap: 1rem;
  padding: 1rem 2rem;
  width: 70%;
  margin: 0 auto;
+ color: #fff;
+ box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.2);
+ border-radius: 10px;
  /* margin-top:3rem ; */
 }
 .icondelete{
     font-size: 3rem;
+    color: red;
+    font-weight: 900;
+   
+}
+.top_proname{
+    font-size: 1px;
+    color: #555;
+    /* border: 1px solid black; */
+    width: 20rem;
+    height: 10px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    border-radius: 6px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+.icondelete{
+    /* color: #D24545; */
+    font-weight: 900;
 }
 .iconedit{
     font-size: 3rem;
@@ -99,19 +162,47 @@
 }
 .name_of_project{
     font-size: 2rem;
+    border: 1px solid #fff;
+    width: 15rem;
+    text-align: center;
+    padding: 3px;
+   border-radius: 5px;
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+   transition: transform 0.2s ease-in-out;
 }
+.name_of_project:active {
+    transform: scale(1.1);
+  }
+
 .box3 h1{
  font-size: 3rem;
  padding: 3rem 0rem 4rem 2rem;
 }
+.icondelete_pro{
+    font-size: 4rem;
+}
+.disabled {
+    /* Styles for disabled state */
+    opacity: 0.5; /* Example: reduce opacity */
+    cursor: not-allowed; /* Example: show not-allowed cursor */
+  }
 .TO-DO-LIST_displyer{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
-    border: 1px solid #fff;
+    border: 1px solid #A94438;
+    margin-top: 1rem;
     padding: 1rem;
+    color: #555;
+    border-radius: 10px;
+}
+.this_contentchange{
+    overflow-y: scroll;
+    /* background-color: aqua; */
+    width: 90%;
+    margin: 0 auto;
 }
 .radiobtncont{
     display: flex;
@@ -131,7 +222,12 @@
 }
 .add_task_btn{
     margin: 0 auto;
-    margin-top: 6rem; 
+    /* margin-top: 6rem;  */
+    margin-bottom: 4rem;
+}
+
+.add_pro span{
+    font-size: 2rem;
 }
 .add_task_btn button{
       width: 8rem;
