@@ -99,7 +99,7 @@ export function project_displyer(proname){
     const priorityParagraph = document.createElement('p');
     priorityParagraph.classList.add('prio');
     priorityParagraph.textContent = element.Priority;
-    
+  
     // Create the edit icon
     const editIcon = document.createElement('ion-icon');
     editIcon.setAttribute('name', 'create-outline');
@@ -109,6 +109,8 @@ export function project_displyer(proname){
     const deleteIcon = document.createElement('ion-icon');
     deleteIcon.setAttribute('name', 'trash-outline');
     deleteIcon.classList.add('icondelete');
+    deleteIcon.addEventListener("click",tododeletefunc)
+
     
     // Append the child elements to the date container
     dateContainer.appendChild(dateParagraph);
@@ -118,6 +120,21 @@ export function project_displyer(proname){
     todolistcontainer.appendChild(dateContainer)
 
     allcont.appendChild(todolistcontainer)
+    const alldivs= document.querySelectorAll(".TO-DO-LIST_displyer")
+    alldivs.forEach(function(todos) {
+      const prio = todos.querySelector(".prio");
+    
+      if (prio.textContent === "low") {
+        todos.style.backgroundColor = "#eb9db7";
+      } else if (prio.textContent === "medium") {
+        todos.style.backgroundColor = "#d47796";
+      } else {
+        todos.style.backgroundColor ="#F4538A";
+      }
+    });
+     
+
+ 
       });
 
  
@@ -162,6 +179,7 @@ const priorityParagraph = document.createElement('p');
 priorityParagraph.classList.add('prio');
 priorityParagraph.textContent = to_do.Priority;
 
+
 // Create the edit icon
 const editIcon = document.createElement('ion-icon');
 editIcon.setAttribute('name', 'create-outline');
@@ -171,6 +189,8 @@ editIcon.classList.add('iconedit');
 const deleteIcon = document.createElement('ion-icon');
 deleteIcon.setAttribute('name', 'trash-outline');
 deleteIcon.classList.add('icondelete');
+deleteIcon.addEventListener("click",tododeletefunc)
+
 
 
 // Append the child elements to the date container
@@ -181,7 +201,27 @@ dateContainer.appendChild(deleteIcon);
 todolistcontainer.appendChild(dateContainer)
 
 allcont.appendChild(todolistcontainer)
-  deleteIcon.addEventListener("click",tododeletefunc)
+
+
+const alldivs= document.querySelectorAll(".TO-DO-LIST_displyer")
+alldivs.forEach(function(todos) {
+  const prio = todos.querySelector(".prio");
+
+  if (prio.textContent === "low") {
+    todos.style.backgroundColor = "#eb9db7";
+  } else if (prio.textContent === "medium") {
+    todos.style.backgroundColor = "#d47796";
+  } else {
+    todos.style.backgroundColor ="#F4538A";
+  }
+});
+
+// const tododelteicon=document.querySelectorAll(".tododelete")
+
+// for(let icon of tododelteicon){
+//   alert("hi")
+// }
+ 
  }
    
 
@@ -205,7 +245,7 @@ allcont.appendChild(todolistcontainer)
 
 
 
-
+ 
 
 
 

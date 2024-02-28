@@ -43,17 +43,15 @@ let last_holder;
 //  saveToLocalStorage("project1",project1);
 
  const project2 =new pkj("project2")
-//  saveToLocalStorage("project2",project2);
 
 
 
-//  const project1_retrived  = retrieveFromLocalStorage("project1");
+
 prject_colector.push(project1)
 
-//  const project2_retrived  = retrieveFromLocalStorage("project2");
+
 prject_colector.push(project2)
-//  console.log("the retrived array colector is know contain to project evry time")
-//  console.log(projectCollector_retrived)
+
 
   const todo1 = new to_do_list("title","09/23/2021","description","low")
   const todo2 = new to_do_list("title2","10/23/2022","description2","medium")
@@ -65,7 +63,7 @@ prject_colector.push(project2)
  project1.pro_task_iteams.push(todo1)
  project2.pro_task_iteams.push(todo2)
  project1.pro_task_iteams.push(todo3)
-//  saveToLocalStorage("prject_colector",prject_colector);
+
  
  
  project_displyer(project1.pname)
@@ -135,10 +133,10 @@ function  projectmacher(event){
 document.querySelector(".submit").addEventListener("click" ,function(){
   submit(event)
   saveToLocalStorage("prject_colector",prject_colector);
-  console.log("the last colll")
-  console.log("here is *****************************")
-  console.log(localStorage.getItem("prject_colector"))
-  console.log(retrieveFromLocalStorage("prject_colector"))
+  // console.log("the last colll")
+  // console.log("here is *****************************")
+  // console.log(localStorage.getItem("prject_colector"))
+  // console.log(retrieveFromLocalStorage("prject_colector"))
   
 
 })
@@ -147,14 +145,14 @@ document.querySelector(".cancel").addEventListener("click" ,function(){
 })
 
  
-//   the funcition that is used to save the data in the local storage 
+
 export function saveToLocalStorage(key, data) {
   const jsonData = JSON.stringify(data);
   localStorage.setItem(key, jsonData);
  
 
 }
-//  funcition that is used to to retrive the data from the local storage
+
 
 function retrieveFromLocalStorage(key) {
   const data = localStorage.getItem(key);
@@ -195,33 +193,47 @@ export function delet_funcition(){
  console.log(parent.textContent)
  console.log(parent)
  const children = parent.children;
-
-  
  const todeltedproject =retrieveFromLocalStorage("prject_colector")
  const found_project = todeltedproject.find(function (project) {
   return project.pname === children[1].textContent;
   
- 
-  
-  
 });
 todo_container.style.opacity="0"
-
 const the_index_to_be_removed=todeltedproject.indexOf(found_project);
 console.log(the_index_to_be_removed)
 todeltedproject.splice(the_index_to_be_removed, 1);
 console.log("after the index is removed it looks like this")
 console.log(todeltedproject)
 saveToLocalStorage("prject_colector",todeltedproject )
-
-// console.log(found_project)
-// console.log("the found object is the above one")
-
-//   console.log("dodododo")
-//   console.log(document.querySelector(".name_of_project").textContent)
 parent.parentNode.removeChild(parent);
 document.querySelector(".top_proname").textContent="";
 }
-export function tododeletefunc(){
-  alert("i clicked")
+
+export function tododeletefunc() {
+  // event.stopPropagation();
+  // event.stopImmediatePropagation();
+  alert("i clicked");
+  const target_todo = event.target;
+  const parentsub = target_todo.parentNode;
+  const text = parentsub.parentNode.children[0].children[1].textContent;
+  console.log("the returned object is:");
+  console.log(current_project)
+  const todotask =current_project.pro_task_iteams
+  
+
+    const found_todo =todotask.find(function (project) {
+      return project.title === text;
+    });
+  
+  
+  console.log(found_todo);
+  const the_index_to_be_removed=todotask.indexOf(found_todo);
+  console.log(the_index_to_be_removed)
+  todotask.splice(the_index_to_be_removed, 1);
+console.log("after the index is removed it looks like this")
+// console.log(todeltedproject)
+saveToLocalStorage("prject_colector",prject_colector )
+parentsub.parentNode.remove();
 }
+
+
