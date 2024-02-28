@@ -104,6 +104,8 @@ export function project_displyer(proname){
     const editIcon = document.createElement('ion-icon');
     editIcon.setAttribute('name', 'create-outline');
     editIcon.classList.add('iconedit');
+    editIcon.classList.add('iconedit2');
+    
     
     // Create the delete icon
     const deleteIcon = document.createElement('ion-icon');
@@ -184,6 +186,7 @@ priorityParagraph.textContent = to_do.Priority;
 const editIcon = document.createElement('ion-icon');
 editIcon.setAttribute('name', 'create-outline');
 editIcon.classList.add('iconedit');
+editIcon.classList.add('iconedit2');
 
 // Create the delete icon
 const deleteIcon = document.createElement('ion-icon');

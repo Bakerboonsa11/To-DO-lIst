@@ -9,6 +9,49 @@
 #E0CCBE
 #747264
 #3C3633 */
+.wraper{
+    position: absolute;
+    top: 13%;
+    left: 85%;
+   
+   
+    display: flex;
+    gap: 1rem;
+    
+    background-color: transparent;
+}
+.dot{
+    background-color: #653bd8;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: animate 1s ease-in-out infinite alternate;
+}
+.dot:nth-child(1){
+   background-color: #d83b6f;
+   animation-delay: -0.25s;
+}
+.dot:nth-child(2){
+    background-color: #653bd8;
+    animation-delay: -0.5s;
+}
+.dot:nth-child(3){
+    background-color: #0a6169;
+    animation-delay: -0.75s;
+}
+.dot:nth-child(4){
+   background-color: #d83b6f;
+   animation-delay: -1s;
+}
+@keyframes animate{
+    0%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(5px);
+    }
+}
 .container{
  max-width: 100%;
  height: 100vh;
@@ -39,8 +82,9 @@
 }
 .logo{
     font-size: 4rem;
-    color: #59D5E0;
+    color: #0a6169;
     font-weight: 900;
+    background-color: transparent;
 }
 .BOX1_SPAN{
     font-size: 3rem;
@@ -55,17 +99,21 @@
     flex-direction: column;
     justify-content: start;
   /* padding: 5rem; */
-  background-color: #F5DD61;
+  /* background-color: #F5DD61; */
+  background-color: #fff;
     gap: 4rem;
+  width: 20%;
     box-shadow: inset 0px 8px 8px 2px rgba(0, 0, 0, 0.2);
 }
 .box3{
-    background-color: #FAA300;
-    width: 75%;
+    /* background-color: #FAA300; */
+    background-color: #fff;
+    width: 80%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     box-shadow: 0px 8px 8px 8px rgba(0, 0, 0, 0.2);
+    /* overflow-y: scroll; */
 }
 
 .box2_header{
@@ -122,10 +170,11 @@
 .project_displyer{
  display: flex;
  align-items: center;
- background-color: #59D5E0;
+ /* background-color: #59D5E0; */
+ background-color:  #0a6169;
  gap: 1rem;
  padding: 1rem 2rem;
- width: 70%;
+ width: 100%;
  margin: 0 auto;
  color: #fff;
  box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.2);
@@ -149,6 +198,8 @@
     align-items: center;
     border-radius: 6px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+   
 }
 .icondelete{
     /* color: #D24545; */
@@ -169,6 +220,7 @@
    border-radius: 5px;
    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
    transition: transform 0.2s ease-in-out;
+   font-family: monospace;
 }
 .name_of_project:active {
     transform: scale(1.1);
@@ -186,11 +238,18 @@
     opacity: 0.5; /* Example: reduce opacity */
     cursor: not-allowed; /* Example: show not-allowed cursor */
   }
+  .iconedit2{
+    color: #0a6169;
+    font-weight: 900;
+    background-color:transparent;
+    margin: 0;
+  }
 .TO-DO-LIST_displyer{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 90%;
+   
     margin: 0 auto;
     border: 1px solid #A94438;
     margin-top: 1rem;
@@ -202,6 +261,8 @@
     overflow-y: scroll;
     /* background-color: aqua; */
     width: 90%;
+    height: 100vh;
+    /* height: 100v; */
     margin: 0 auto;
 }
 .radiobtncont{
@@ -210,7 +271,8 @@
     gap: 3rem;
 }
 .radiobtncont p{
-   font-size: 3rem;
+   font-size: 2rem;
+   font-family: monospace;
 }
 .datecont{
     display: flex;
@@ -218,12 +280,26 @@
     align-items: center;
 }
 .datecont p{
-    font-size: 3rem;
+    font-size: 2rem;
+    font-family: Brush Script MT ,cursive;
 }
 .add_task_btn{
     margin: 0 auto;
     /* margin-top: 6rem;  */
     margin-bottom: 4rem;
+    width: 14rem;
+}
+.add_task{
+    border: none;
+    background-color: #d83b6f;
+    border: 1px solid #fff;
+    width: 400px;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 800;
+  
 }
 
 .add_pro span{
