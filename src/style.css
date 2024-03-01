@@ -103,7 +103,8 @@
   background-color: #fff;
     gap: 4rem;
   width: 20%;
-    box-shadow: inset 0px 8px 8px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset  0 0 10px #d83b6f;
+    /* box-shadow: inset 0px 8px 8px 2px rgba(0, 0, 0, 0.2); */
 }
 .box3{
     /* background-color: #FAA300; */
@@ -112,7 +113,8 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 8px 8px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0px 8px 8px 8px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 0 10px #d83b6f;
     /* overflow-y: scroll; */
 }
 
@@ -312,12 +314,16 @@
 }
 .dialog{
     width: 40rem;
-    height: 45rem;
+    height: 47rem;
     margin: 0 auto;
-    margin-top: 6rem;
+    margin-top: 10rem;
     border: none;
     text-align: center;
     padding-top: 3rem;
+    /* background-color: #d83b6f; */
+    background-image: linear-gradient(to bottom, #d83b6f, #e0a3b7);
+    border: 1px solid #fff;
+    border-radius: 20px;
 }
 .form{
   display: flex;
@@ -329,7 +335,10 @@
 .form div label{
     font-size: 2rem;
     text-align: center;
-  
+    color: #fff;
+   font-weight: 900;
+   letter-spacing: 2px;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     /* background-color: aqua; */
 }
 .input_box{
@@ -341,27 +350,50 @@
 .form div input{
     font-size: 1.5rem;
     text-align: center;
-    width: 25rem;   
+    width: 15rem;   
+    outline: none;
+    border-radius: 5px;
+    border: none;
 }
 #myDropdown{
-width: 20rem;
-height: 4rem;
+width: 15rem;
+height: 2rem;
 text-align: center;
 font-size: 1.5rem;
+outline: none;
+    border-radius: 5px;
+    border: none;
 }
 textarea{
  width: 25rem;
  font-size: 1.3rem;
+ border-radius: 10px;
+ background-image: linear-gradient(to right, #f1769f, #e0a3b7);
+ border: none;
+ border: 1px solid #fff;
+ padding: 10px;
+ color: #f5f5f5;
 }
 .submit{
   width: 9rem;
   height: 3rem;
   font-size: 1.4rem;
+  background-color: #d83b6f;
+  color: #fff;
+ font-weight: 900;
+ border: none;
+ margin: 10px;
+ border-radius: 4px;
 }
 .cancel{
     width: 9rem;
     height: 3rem;
     font-size: 1.4rem;
+    background-color: #d83b6f;
+  color: #fff;
+ font-weight: 900;
+ border: none;
+ border-radius: 4px;
 }
 /* .form div input[type="date"]{
     width: 30rem;

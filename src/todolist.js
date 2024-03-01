@@ -30,11 +30,21 @@ export function todo_displayer(){
    const dialog = document.querySelector(".dialog");
    dialog.showModal()
    }
+   export function todo_displayer2(){
+      const dialog2 = document.querySelector(".dialog2");
+     
+      dialog2.showModal()
+      }
 export function cancel_todo(){
       
        const dialog = document.querySelector(".dialog");
        dialog.close()
    }
+   export function cancel2(){
+      
+      const dialog = document.querySelector(".dialog2");
+      dialog.close()
+  }
 export function submit(event){
        event.preventDefault()
        const dialog = document.querySelector(".dialog");
@@ -42,11 +52,7 @@ export function submit(event){
      const  dateInputsvalue =document.querySelector("input[type='date']").value;
      const descrinputvalue = document.querySelector("textarea").value
      const selinputvalue = document.querySelector("select").value
-     console.log("the place")
-     console.log(textInputsvalue)
-     console.log( dateInputsvalue)
-     console.log(descrinputvalue)
-     console.log(descrinputvalue)
+   
 
      dialog.close()
      to_do_list_object(textInputsvalue,dateInputsvalue,descrinputvalue,selinputvalue)

@@ -14,6 +14,7 @@
      <spaan class="dot"></spaan>
     </div>
     <dialog class="dialog" >
+     
        <form action="#" class="form">
          <div class="input_box">
           <label for="title"> title</label>
@@ -45,6 +46,38 @@
 
        </form>
     </dialog>
+    <dialog class="dialog2 dialog" >
+      <form action="#" class="form">
+        <div class="input_box">
+         <label for="title"> title</label>
+         <input type="text" id="title" class="title2">
+        </div>
+        
+        <div class="input_box">
+         <label for="date">Date</label>
+         <input type="date" class="date2">
+        </div>
+        <div class="input_box">
+         <label for="Priority"> title</label>
+         <select id="myDropdown" class="drop2">
+           <option value="low"> LOW</option>
+           <option value="medium">MEDIUM</option>
+           <option value="high">HIGHT</option>
+           
+         </select>
+        </div>
+        <div class="input_box">
+        
+         <textarea name="text_area" id="disc" cols="30" rows="5" class="textarea2">description</textarea>
+       </div>
+        <div class="btn_submit_container">
+            <button type="submit" class="submit2 submit">Submit</button>
+            <button type="button" class="cancel cancel2"> Cancel</button>
+            
+        </div>
+
+      </form>
+   </dialog>
     <div class="grid_container">
                 <div class="box1"><ion-icon  class="logo" name="logo-buffer"> </ion-icon> <span class="BOX1_SPAN">TO-DO-LIST</span></div>
               
@@ -63,19 +96,7 @@
                       <button class="add_task" >+ ADD TASK</button>
                     </div>
                     <div class="this_contentchange">
-                      <div class="TO-DO-LIST_displyer">
-                    
-                        <div class="radiobtncont">
-                          <input type="radio">
-                          <p>hg</p>
-                        </div>
-                        <div class="datecont">
-                          <p class="date">23/05/2020</p>
-                          <!-- <p class="prio">law</p> -->
-                          <ion-icon name="create-outline" class="iconedit"></ion-icon>
-                          <ion-icon name="trash-outline" class="icondelete tododelte"></ion-icon>
-                        </div>
-                    </div>
+               
                     </div>
                   
                   

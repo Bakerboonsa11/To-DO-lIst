@@ -1,4 +1,4 @@
-import {delet_funcition,tododeletefunc} from "./index.js"
+import {delet_funcition,tododeletefunc,todoedit} from "./index.js"
 export function project_displyer(proname){
   
     const box = document.querySelector(".box2")
@@ -105,6 +105,7 @@ export function project_displyer(proname){
     editIcon.setAttribute('name', 'create-outline');
     editIcon.classList.add('iconedit');
     editIcon.classList.add('iconedit2');
+    editIcon.addEventListener('click',todoedit)
     
     
     // Create the delete icon
@@ -187,6 +188,7 @@ const editIcon = document.createElement('ion-icon');
 editIcon.setAttribute('name', 'create-outline');
 editIcon.classList.add('iconedit');
 editIcon.classList.add('iconedit2');
+editIcon.addEventListener('click',todoedit)
 
 // Create the delete icon
 const deleteIcon = document.createElement('ion-icon');

@@ -3,7 +3,15 @@ import template from './index.html';
 import template_style from './style.css';
 import {pkj} from './pkj.js';
 import{project_displyer,todorender} from './dom.js';
-import{todo_displayer,cancel_todo,submit,to_do_list_object,current_project,to_do_list} from './todolist.js';
+import{
+  todo_displayer,
+  todo_displayer2,
+  cancel_todo,submit,
+  to_do_list_object,
+  current_project,
+  to_do_list,
+  cancel2
+} from './todolist.js';
 // import{current_project} from './todolist.js';
 
 
@@ -18,6 +26,7 @@ function retrieveDataFromLocalStorage() {
 
 window.addEventListener('load', function() {
 alert("retfgyhuj")
+ 
  retrieveDataFromLocalStorage();
  const retrived_data =JSON.parse(localStorage.getItem("prject_colector"))
  console.log(retrived_data)
@@ -235,5 +244,74 @@ console.log("after the index is removed it looks like this")
 saveToLocalStorage("prject_colector",prject_colector )
 parentsub.parentNode.remove();
 }
+// below are edits variable 
+let  parentsub
+let found_todo2
+export function todoedit(){
+
+  event.preventDefault()
+  const target_todo = event.target;
+ parentsub = target_todo.parentNode;
+  const text = parentsub.parentNode.children[0].children[1].textContent;
+  
+  const todotask =current_project.pro_task_iteams
+  
+
+     found_todo2 =todotask.find(function (project) {
+      return project.title === text;
+    });
+
+    todo_displayer2()
+  
+
+
+
+ 
+}
+document.querySelector(".submit2").addEventListener("click",()=>{
+  get_edit(parentsub.parentNode.children,found_todo2,parentsub)
+})
+ function get_edit(text,found_todo,parentsub){
+    
+      event.preventDefault()
+  const dialog = document.querySelector(".dialog2");
+  const textInputsvalue = document.querySelector(".title2").value;
+  const dateInputsvalue = document.querySelector(".date2").value;
+  const descrinputvalue = document.querySelector(".textarea2").value
+  const selinputvalue = document.querySelector(".drop2").value
+ 
+  dialog.close()
+ 
+
+  found_todo.Priority=selinputvalue
+  found_todo.date=dateInputsvalue
+  found_todo.description=descrinputvalue
+  found_todo.title=textInputsvalue
+
+  saveToLocalStorage("prject_colector",prject_colector )
+
+ const first_div =text[0]
+ const second_div =text[1]
+
+ first_div.children[1].textContent=textInputsvalue
+ second_div.children[1].textContent=selinputvalue
+ second_div.children[0].textContent=dateInputsvalue
+ console.log("the text is ")
+ console.log(text)
+
+ 
+   if ( second_div.children[1].textContent=== "low") {
+    parentsub.parentNode.style.backgroundColor = "#eb9db7";
+   } else if ( second_div.children[1].textContent === "medium") {
+    parentsub.parentNode.style.backgroundColor = "#d47796";
+   } else {
+    parentsub.parentNode.style.backgroundColor ="#F4538A";
+   }
+   console.log( parentsub.parentNode)
+
+ 
+}
+document.querySelector(".cancel2").addEventListener("click",cancel2)
+
 
 
