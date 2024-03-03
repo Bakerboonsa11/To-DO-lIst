@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 62.5%;
+    
 }
 /* mycolors
 #EEEDEB
@@ -68,6 +69,7 @@
 .vertical_container{
    display: flex;
    flex: 1;
+   gap: 4rem;
 
 }
 .box1{
@@ -82,7 +84,7 @@
 }
 .logo{
     font-size: 4rem;
-    color: #0a6169;
+    color: #9BB0C1;
     font-weight: 900;
     background-color: transparent;
 }
@@ -94,27 +96,46 @@
 }
 .box2{
    
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-  /* padding: 5rem; */
-  /* background-color: #F5DD61; */
-  background-color: #fff;
-    gap: 4rem;
-  width: 20%;
-  box-shadow: inset  0 0 10px #d83b6f;
-    /* box-shadow: inset 0px 8px 8px 2px rgba(0, 0, 0, 0.2); */
-}
-.box3{
-    /* background-color: #FAA300; */
-    background-color: #fff;
-    width: 80%;
+    width: 15%;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    overflow-y: scroll;
+
+ 
+    gap: 4rem;
+    background-color: #9BB0C1;
+  
+  width: 30%;
+
+  /* box-shadow: 4px 4px 10px #d83b6f; */
+    /* box-shadow:  0px 8px 8px 2px rgba(0, 0, 0, 0.2); */
+
+}
+.box3::-webkit-scrollbar-thumb {
+  background-color: transparent;
+    border-radius: 0.25em;
+    width: 0.5em;
+  }
+  dialog::backdrop{
+    background-image: linear-gradient(to bottom, #d83b6f, #e0a3b7);;
+  }
+.box3{
+    clip-path: polygon(0% 15%, 15% 15%,15% 0%,85% 0%,85% 15%,100% 15%,100% 87%,100% 94%,100% 100%,0% 100%,0% 86%,0% 85%);
+    background-color: #9BB0C1;
+    /* background-color: #FAA300; */
+    /* background-color: #fff; */
+    width: 60%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: 4rem;
     /* box-shadow: 0px 8px 8px 8px rgba(0, 0, 0, 0.2); */
-    box-shadow: 0 0 10px #d83b6f;
+    /* box-shadow: 0 0 10px #d83b6f; */
     /* overflow-y: scroll; */
 }
 
@@ -173,13 +194,13 @@
  display: flex;
  align-items: center;
  /* background-color: #59D5E0; */
- background-color:  #0a6169;
- gap: 1rem;
+ background-color:  #F4538A;
+ gap: 2rem;
  padding: 1rem 2rem;
- width: 100%;
+ width: 80%;
  margin: 0 auto;
  color: #fff;
- box-shadow: 2px 6px 4px rgba(0, 0, 0, 0.2);
+ box-shadow: 2px 6px 4px rgba(224, 111, 111, 0.2);
  border-radius: 10px;
  /* margin-top:3rem ; */
 }
@@ -195,6 +216,8 @@
     /* border: 1px solid black; */
     width: 20rem;
     height: 10px;
+    margin-left: 0rem;
+    margin-top: 6rem;
     display: flex;
     align-content: center;
     align-items: center;
