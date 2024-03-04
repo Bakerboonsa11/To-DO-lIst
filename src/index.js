@@ -5,12 +5,14 @@ import {pkj} from './pkj.js';
 import{project_displyer,todorender} from './dom.js';
 import{
   todo_displayer,
+  projecteditorshowUp,
   todo_displayer2,
   cancel_todo,submit,
   to_do_list_object,
   current_project,
   to_do_list,
-  cancel2
+  cancel2,
+  todo_displayer3
 } from './todolist.js';
 // import{current_project} from './todolist.js';
 
@@ -25,7 +27,7 @@ function retrieveDataFromLocalStorage() {
 
 
 window.addEventListener('load', function() {
-alert("retfgyhuj")
+
  
  retrieveDataFromLocalStorage();
  const retrived_data =JSON.parse(localStorage.getItem("prject_colector"))
@@ -78,9 +80,11 @@ prject_colector.push(project2)
  project_displyer(project1.pname)
  project_displyer(project2.pname)
 
-document.querySelector(".addbtn").addEventListener("click",addbtnf)
+document.querySelector(".addbtn").addEventListener("click",todo_displayer3 )
+document.querySelector(".submit3").addEventListener("click",addbtnf)
 
 function addbtnf(){
+  event.preventDefault()
   retrieveDataFromLocalStorage();
   saveToLocalStorage("prject_colector", prject_colector);
   let pro_name_array=[]
@@ -88,7 +92,7 @@ function addbtnf(){
   // const retrived_pro_name_array=retrieveFromLocalStorage("pro_name_array") 
 
    
-   let  pname=prompt('enter project name ')
+   let  pname=document.querySelector(".dialogname3").value
     pro_name_array.push(pname)
   let  proname =new pkj(pname)
   
@@ -107,6 +111,9 @@ function addbtnf(){
  
   project_displyer(proname.pname)
   colector_reruner()
+  const dialog3 = document.querySelector(".dialog3");
+     
+   dialog3.close() 
 }
 function colector_reruner(){
      
@@ -311,7 +318,39 @@ document.querySelector(".submit2").addEventListener("click",()=>{
 
  
 }
+
 document.querySelector(".cancel2").addEventListener("click",cancel2)
 
+export function projectedit_displyer(){
+  projecteditorshowUp()
+  const ratg =(event.target)
+
+  const parent = ratg.parentNode
+ 
+  document.querySelector('.submit4').addEventListener("click", (event)=>project_editor( parent.children[1]))
+}
+
+export function project_editor(paragraph){
+  event.preventDefault()
+  const todo_container = document.querySelector(".this_contentchange")
+  todo_container.style.opacity="100%"
+
+  projecteditorshowUp()
+  const found_project = prject_colector.find((project)=>{
+    return project.pname===paragraph.textContent
+ })
+ console.log(found_project)
+ const updatevalue=document.querySelector(".dialogname4").value
+
+ found_project.pname=updatevalue
+  // paragraph.textContent=updatevalue
+ console.log(document.querySelector(".dialogname3").value)
+  saveToLocalStorage("prject_colector",prject_colector )
+  const dialog4 = document.querySelector(".dialog4");
+  dialog4.close()
+  window.location.reload()
+
+ 
+}
 
 

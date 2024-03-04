@@ -421,3 +421,7 @@ textarea{
 /* .form div input[type="date"]{
     width: 30rem;
 } */
+.viewicon{
+    font-size: 4rem;
+    color: #0a6169;
+}

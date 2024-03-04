@@ -30,11 +30,21 @@ export function todo_displayer(){
    const dialog = document.querySelector(".dialog");
    dialog.showModal()
    }
-   export function todo_displayer2(){
+export function todo_displayer2(){
       const dialog2 = document.querySelector(".dialog2");
      
       dialog2.showModal()
       }
+ export function todo_displayer3() {
+         const dialog3 = document.querySelector(".dialog3");
+     
+         dialog3.showModal() 
+      }
+export function  projecteditorshowUp(){
+   const dialog4 = document.querySelector(".dialog4");
+     
+         dialog4.showModal() 
+}
 export function cancel_todo(){
       
        const dialog = document.querySelector(".dialog");

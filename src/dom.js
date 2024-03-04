@@ -1,4 +1,10 @@
-import {delet_funcition,tododeletefunc,todoedit} from "./index.js"
+import {
+  delet_funcition,
+  tododeletefunc,
+  todoedit,
+  
+  projectedit_displyer
+} from "./index.js"
 export function project_displyer(proname){
   
     const box = document.querySelector(".box2")
@@ -21,6 +27,9 @@ export function project_displyer(proname){
     editIcon.setAttribute('name', 'create-outline');
     editIcon.classList.add('iconedit');
     boxdisplyer.appendChild(editIcon)
+    editIcon.addEventListener("click",(event)=>{
+      projectedit_displyer()
+    })
    
 
     let deleteIcon = document.createElement('ion-icon');
@@ -99,6 +108,14 @@ export function project_displyer(proname){
     const priorityParagraph = document.createElement('p');
     priorityParagraph.classList.add('prio');
     priorityParagraph.textContent = element.Priority;
+    priorityParagraph.style.display= "none"
+    // <ion-icon name="eye-outline"></ion-icon>
+
+     const viewIcon = document.createElement('ion-icon');
+    viewIcon.setAttribute('name', 'eye-outline');
+    viewIcon.classList.add('viewicon');
+    viewIcon.classList.add('viewicon');
+    // viewIcon.addEventListener('click',todoedit)
   
     // Create the edit icon
     const editIcon = document.createElement('ion-icon');
@@ -120,6 +137,7 @@ export function project_displyer(proname){
     dateContainer.appendChild(priorityParagraph);
     dateContainer.appendChild(editIcon);
     dateContainer.appendChild(deleteIcon);
+    dateContainer.appendChild(viewIcon);
     todolistcontainer.appendChild(dateContainer)
 
     allcont.appendChild(todolistcontainer)
@@ -177,10 +195,12 @@ const dateParagraph = document.createElement('p');
 dateParagraph.classList.add('date');
 dateParagraph.textContent = to_do.date;
 
+
 // Create the priority paragraph
 const priorityParagraph = document.createElement('p');
 priorityParagraph.classList.add('prio');
 priorityParagraph.textContent = to_do.Priority;
+priorityParagraph.style.display= "none"
 
 
 // Create the edit icon
@@ -196,13 +216,17 @@ deleteIcon.setAttribute('name', 'trash-outline');
 deleteIcon.classList.add('icondelete');
 deleteIcon.addEventListener("click",tododeletefunc)
 
-
+const viewIcon = document.createElement('ion-icon');
+viewIcon.setAttribute('name', 'eye-outline');
+viewIcon.classList.add('viewicon');
+viewIcon.classList.add('viewicon');
 
 // Append the child elements to the date container
 dateContainer.appendChild(dateParagraph);
 dateContainer.appendChild(priorityParagraph);
 dateContainer.appendChild(editIcon);
 dateContainer.appendChild(deleteIcon);
+dateContainer.appendChild(viewIcon);
 todolistcontainer.appendChild(dateContainer)
 
 allcont.appendChild(todolistcontainer)
