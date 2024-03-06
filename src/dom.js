@@ -2,7 +2,7 @@ import {
   delet_funcition,
   tododeletefunc,
   todoedit,
-  
+  viewdisply,
   projectedit_displyer
 } from "./index.js"
 export function project_displyer(proname){
@@ -115,7 +115,7 @@ export function project_displyer(proname){
     viewIcon.setAttribute('name', 'eye-outline');
     viewIcon.classList.add('viewicon');
     viewIcon.classList.add('viewicon');
-    // viewIcon.addEventListener('click',todoedit)
+    viewIcon.addEventListener('click',viewdisply)
   
     // Create the edit icon
     const editIcon = document.createElement('ion-icon');
@@ -220,6 +220,7 @@ const viewIcon = document.createElement('ion-icon');
 viewIcon.setAttribute('name', 'eye-outline');
 viewIcon.classList.add('viewicon');
 viewIcon.classList.add('viewicon');
+viewIcon.addEventListener('click',viewdisply)
 
 // Append the child elements to the date container
 dateContainer.appendChild(dateParagraph);

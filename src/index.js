@@ -12,7 +12,11 @@ import{
   current_project,
   to_do_list,
   cancel2,
-  todo_displayer3
+  todo_displayer3,
+  projecteditorClose,
+  projectedi1torClose,
+  viewshowup,
+  viewshowupCancel
 } from './todolist.js';
 // import{current_project} from './todolist.js';
 
@@ -320,6 +324,8 @@ document.querySelector(".submit2").addEventListener("click",()=>{
 }
 
 document.querySelector(".cancel2").addEventListener("click",cancel2)
+document.querySelector(".cancel4").addEventListener("click",projecteditorClose)
+document.querySelector(".cancel3").addEventListener("click",projectedi1torClose)
 
 export function projectedit_displyer(){
   projecteditorshowUp()
@@ -353,4 +359,20 @@ export function project_editor(paragraph){
  
 }
 
+export function viewdisply(){
+  
+  viewshowup()
+  const target_todo = event.target;
+ parentsub = target_todo.parentNode;
+  const text = parentsub.parentNode.children[0].children[1].textContent;
+  
+  const todotask =current_project.pro_task_iteams
+  
 
+     const found_todo3 =todotask.find(function (project) {
+      return project.title === text;
+    });
+    document.querySelector(".discription_container").textContent=found_todo3.description
+    // console.log(found_todo3.description)
+}
+document.querySelector(".cancel5").addEventListener("click",viewshowupCancel)

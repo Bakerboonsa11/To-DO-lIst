@@ -45,6 +45,28 @@ export function  projecteditorshowUp(){
      
          dialog4.showModal() 
 }
+
+export function viewshowup(){
+   const dialog5 = document.querySelector(".dialog5");
+     
+         dialog5.showModal() 
+}
+
+export function viewshowupCancel(){
+   const dialog5 = document.querySelector(".dialog5");
+     
+         dialog5.close() 
+}
+export function  projecteditorClose(){
+   const dialog4 = document.querySelector(".dialog4");
+     
+         dialog4.close() 
+}
+export function projectedi1torClose(){
+   const dialog3 = document.querySelector(".dialog3");
+     
+         dialog3.close() 
+}
 export function cancel_todo(){
       
        const dialog = document.querySelector(".dialog");
